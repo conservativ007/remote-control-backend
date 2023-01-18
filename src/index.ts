@@ -10,10 +10,13 @@ wss.on('connection', (ws) => {
 
     ws.send(data.toString());
 
-    let step = Number(data.toString().split(' ')[1]);
-    let move = data.toString();
+    let action = data.toString().split(' ')[0];
+    let radius = Number(data.toString().split(' ')[1]);
+    let lengthOfRectang = Number(data.toString().split(' ')[2]);
 
-    mouseMove.mouseControl(move, step);
+    mouseMove.mouseControl(action, radius, lengthOfRectang);
+
+    console.log({ action, radius, lengthOfRectang });
   });
 
   // ws.send(message);
