@@ -7,6 +7,7 @@ wss.on('connection', (ws) => {
     console.log('received: %s', data);
 
     let message = mouseController(data, ws);
+    if (message === '') return;
     ws.send(message);
   });
 });

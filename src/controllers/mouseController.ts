@@ -15,7 +15,8 @@ export function mouseController(data, ws): string {
   }
 
   if (action === 'prnt_scrn') {
-    getScreenshot();
+    getScreenshot(ws, action);
+    return '';
   }
 
   mouseMove.mouseControl(action, radius, lengthOfRectang);
