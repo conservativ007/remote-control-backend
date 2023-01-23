@@ -1,6 +1,6 @@
 import { getMousePosition } from '../getMousePosition/getMousePosition';
 import { MouseMove } from '../mouseHundlers/mouseMove';
-import { providerRegistry, Region, ScreenClass } from '@nut-tree/nut-js';
+import { getScreenshot } from '../getScreenshot/getScreenshot';
 
 export function mouseController(data, ws): string {
   let mouseMove = new MouseMove();
@@ -15,11 +15,7 @@ export function mouseController(data, ws): string {
   }
 
   if (action === 'prnt_scrn') {
-    // here will be implemented the screenshot method
-    // let testClass = new ScreenClass(providerRegistry);
-    // let testRegion = new Region(100, 100, 100, 100);
-    // testClass.captureRegion('1', testRegion);
-    // console.log(testClass);
+    getScreenshot();
   }
 
   mouseMove.mouseControl(action, radius, lengthOfRectang);
